@@ -1,3 +1,1 @@
-RAFI KONTOL
-
-VERDI JUGA KONTOL
+jancok
