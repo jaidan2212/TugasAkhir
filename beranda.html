@@ -1,241 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOEFL Test Platform</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: #2d5be3;
-            padding: 10px;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .question {
-            margin-bottom: 10px;
-        }
-
-        .leaderboard,
-        .certificate {
-            margin-top: 20px;
-        }
-
-        .score-preview {
-            margin: 10px 0;
-            font-weight: bold;
-            color: green;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOEFL</title>
+  <link rel="stylesheet" href="beranda.css" />
 </head>
 
 <body>
-    <nav>
-        <img height="50px" weidth="50px" src="c:\Users\TOSHIBA\Downloads\WhatsApp_Image_2025-06-09_at_13.25.07_c686a753-removebg-preview.png">
-        <a href="Dashboard.html" onclick="showPage(`dashboard`)">Dashboard</a>
-
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="Dashboard.html">Beranda</a></li>
+        <li><a href="Test.html">Latihan Tes</a></li>
+        <li><a href="Dashboard.html"></a><button class="btn-masuk">Masuk</button></li>
+      </ul>
     </nav>
-    <div class="container">
-        <div id="home">Selamat datang di platform ZVZ TOEFL!</div>
-        <h3 style="font-weight: normal;">Sialahkan Klik Dashbord untuk memulai test nya yaa!!!</h3>
-        <div id="dashboard" class="hidden">
-            <h2>Dashboard</h2>
-            <div>Nama: <span id="userName">Zaidan</span></div>
-            <div>Riwayat Tes:</div>
-            <ul id="testHistory"></ul>
-            <button onclick="editProfile()">Edit Profil</button>
-        </div>
+    <div class="banner-warning">
+      <strong>⚠️ ATTENTION!</strong> PENAWARAN SPESIAL UNTUK KAMU YANG BUTUH SERTIFIKAT TOEFL DENGAN CEPAT!!
+    </div>
+  </header>
 
-        <div id="test" class="hidden">
-            <h2>TOEFL Test</h2>
-            <div>
-                <label>
-                    Mode:
-                    <select id="mode">
-                        <option value="ujian">Ujian</option>
-                        <option value="latihan">Latihan</option>
-                    </select>
-                </label>
-            </div>
-            <div id="questionBox"></div>
-            <button onclick="prevQuestion()">Sebelumnya</button>
-            <button onclick="nextQuestion()">Berikutnya</button>
-            <div class="score-preview">Skor Sementara: <span id="tempScore">0</span></div>
-            <div>Timer: <span id="timer">00:00</span></div>
-            <button onclick="submitTest()">Selesai</button>
-        </div>
-
-        <div id="results" class="hidden">
-            <h2>Hasil Test</h2>
-            <p>Skor Anda: <span id="score">0</span></p>
-            <div id="pembahasan"></div>
-            <div class="leaderboard">
-                <h3>Leaderboard</h3>
-                <ul id="leaderboardList"></ul>
-            </div>
-            <div class="certificate">
-                <button onclick="downloadCertificate()">Download Sertifikat PDF</button>
-            </div>
-        </div>
-        <script>
-  // DATA SOAL
-
-  let currentSection = 0;
-  let currentQuestion = 0;
-  let userAnswers = {};
-  let timerInterval;
-
-  function showPage(page) {
-    document.getElementById("home").classList.add("hidden");
-    document.getElementById("dashboard").classList.add("hidden");
-    document.getElementById("test").classList.add("hidden");
-    document.getElementById("results").classList.add("hidden");
-
-    document.getElementById(page).classList.remove("hidden");
-
-    if (page === "test") {
-      startSection(0);
-    }
-  }
-
-  function startSection(index) {
-    currentSection = index;
-    currentQuestion = 0;
-    renderQuestion();
-    startTimer(questions[currentSection].time);
-  }
-
-  function renderQuestion() {
-    const section = questions[currentSection];
-    const q = section.questions[currentQuestion];
-    const key = `q-${currentSection}-${currentQuestion}`;
-
-    let html = `<div class="question"><strong>${q.text}</strong><br>`;
-    q.options.forEach(opt => {
-      const checked = userAnswers[key] === opt ? "checked" : "";
-      html += `<label><input type="radio" name="answer" value="${opt}" ${checked} onchange="selectAnswer(${key}, ${opt})"> ${opt}</label><br>`;
-    });
-    html += `</div>`;
-
-    document.getElementById("questionBox").innerHTML = html;
-    updateTempScore();
-  }
-
-  function selectAnswer(key, value) {
-    userAnswers[key] = value;
-  }
-
-  function prevQuestion() {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      renderQuestion();
-    }
-  }
-
-  function nextQuestion() {
-    const section = questions[currentSection];
-    if (currentQuestion < section.questions.length - 1) {
-      currentQuestion++;
-      renderQuestion();
-    } else if (currentSection < questions.length - 1) {
-      clearInterval(timerInterval);
-      startSection(currentSection + 1);
-    } else {
-      submitTest();
-    }
-  }
-
-  function startTimer(duration) {
-    let time = duration;
-    const timerEl = document.getElementById("timer");
-
-    function update() {
-      const minutes = String(Math.floor(time / 60)).padStart(2, "0");
-      const seconds = String(time % 60).padStart(2, "0");
-      timerEl.textContent = `${minutes}:${seconds}`;
-      if (time <= 0) {
-        clearInterval(timerInterval);
-        nextQuestion();
-      }
-      time--;
-    }
-
-    clearInterval(timerInterval);
-    update();
-    timerInterval = setInterval(update, 1000);
-  }
-
-  function calculateScore() {
-    let correct = 0;
-    let total = 0;
-
-    questions.forEach((section, i) => {
-      section.questions.forEach((q, j) => {
-        const key = `q-${i}-${j}`;
-        if (userAnswers[key] && userAnswers[key] === q.answer) correct++;
-        total++;
-      });
-    });
-
-    return { correct, total, score: Math.round((correct / total) * 100) };
-  }
-
-  function updateTempScore() {
-    const result = calculateScore();
-    document.getElementById("tempScore").textContent = result.score;
-  }
-
-  function submitTest() {
-    clearInterval(timerInterval);
-    const result = calculateScore();
-
-    document.getElementById("test").classList.add("hidden");
-    document.getElementById("results").classList.remove("hidden");
-
-    document.getElementById("score").textContent = result.score;
-
-    // Simpan ke riwayat (optional)
-    const history = document.getElementById("testHistory");
-    const li = document.createElement("li");
-    li.textContent = `Skor: ${result.score}% (${result.correct}/${result.total})`;
-    history.appendChild(li);
-  }
-
-  function downloadCertificate() {
-    alert("Fitur download sertifikat belum tersedia.");
-  }
-
-  function editProfile() {
-    alert("Fitur edit profil belum tersedia.");
-  }
-
-  // Auto show home saat awal load
-  showPage(`home`);
-</script>
-
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Test TOEFL Mudah<br>Dari Rumah</h1>
+      <p>Bantu kamu mendapatkan sertifikat TOEFL dengan cara yang lebih simple dan flexible.</p>
     </div>
 
-    
-</body>
+  </section>
 
-</html>
+  <section class="steps">
+    <h2>3-Step Mudah Test TOEFL dari Rumah</h2>
+    <p class="steps-subtitle">
+      ZVZ-TOEFL membantu kamu untuk mendapatkan sertifikat TOEFL impianmu dengan 3 tahapan mudah.
+    </p>
+
+    <div class="steps-container">
+      <div class="step">
+        <div class="icon-box green">
+          <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="Icon Pilih Paket" />
+        </div>
+        <h3>Pilih Paket Test</h3>
+        <p>Pilih paket test sesuai dengan kebutuhanmu.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-box red">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="Icon Kerjakan Test" />
+        </div>
+        <h3>Kerjakan Test</h3>
+        <p>Kerjakan semua sesi test sampai selesai.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-box yellow">
+          <img src="https://cdn-icons-png.flaticon.com/512/4429/4429820.png" alt="Icon Unduh Sertifikat" />
+        </div>
+        <h3>Unduh Sertifikat</h3>
+        <p>Unduh sertifikat atau request pengiriman sertifikat cetak-nya.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paket" id="paket">
+  <h2>Pilihan Paket Test TOEFL Terbaik</h2>
+  <p class="paket-subtitle">
+    Pilih paket test TOEFL sesuai dengan kebutuhanmu dan selesaikan proses pendaftaran sebelum kehabisan kuota!
+  </p>
+
+  <div class="paket-container">
+    <div class="paket-card">
+      <img
+        src="https://englishvit.com/_next/image?url=https%3A%2F%2Fcdn.englishvit.com%2Fproducts%2Fstarter-plan.webp&w=384&q=75"
+        alt="Starter Plan" class="paket-image">
+      <div class="paket-body">
+        <span class="paket-tag">🟢 Certification Test</span>
+        <h3>Starter Plan</h3>
+        <p>1x Test TOEFL Online Bersertifikat</p>
+        <div class="paket-harga">
+          <span class="harga-now">Rp99.000</span>
+          <span class="harga-diskon">82%</span>
+          <span class="harga-old">Rp550.000</span>
+        </div>
+        <a href="#" class="paket-button">Lihat Detail</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="paket-warning">
+    *Kuota test terbatas, selesaikan pendaftaran sebelum kehabisan kuota!
+  </p>
+</section>
+
+  <footer>
+    <p>Ainur Raftuzzaki - 240411100034 - Kelas (IF2C)</p>
+    <p>Muhammad Zaidan Nabil Rafi - 240411100068 - Kelas (IF2C)</p>
+    <p>Verdi Setyawan Ardiansyah Putra - 240411100100 - Kelas (IF2C)</p>
+  </footer>
