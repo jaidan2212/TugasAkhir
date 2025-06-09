@@ -41,3 +41,19 @@ button {
   font-weight: bold;
   color: #d9534f;
 }
+
+.container p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.container button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #4cae4c;
+}
