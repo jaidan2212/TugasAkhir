@@ -95,8 +95,145 @@
                 <button onclick="downloadCertificate()">Download Sertifikat PDF</button>
             </div>
         </div>
+        <script>
+  // DATA SOAL
+
+  let currentSection = 0;
+  let currentQuestion = 0;
+  let userAnswers = {};
+  let timerInterval;
+
+  function showPage(page) {
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("test").classList.add("hidden");
+    document.getElementById("results").classList.add("hidden");
+
+    document.getElementById(page).classList.remove("hidden");
+
+    if (page === "test") {
+      startSection(0);
+    }
+  }
+
+  function startSection(index) {
+    currentSection = index;
+    currentQuestion = 0;
+    renderQuestion();
+    startTimer(questions[currentSection].time);
+  }
+
+  function renderQuestion() {
+    const section = questions[currentSection];
+    const q = section.questions[currentQuestion];
+    const key = 'q-${currentSection}-${currentQuestion}';
+
+    let html = '<div class="question"><strong>${q.text}</strong><br>';
+    q.options.forEach(opt => {
+      const checked = userAnswers[key] === opt ? "checked" : "";
+      html += '<label><input type="radio" name="answer" value="${opt}" ${checked} onchange="selectAnswer(${key}, ${opt})"> ${opt}</label><br>';
+    });
+    html += '</div>';
+
+    document.getElementById("questionBox").innerHTML = html;
+    updateTempScore();
+  }
+
+  function selectAnswer(key, value) {
+    userAnswers[key] = value;
+  }
+
+  function prevQuestion() {
+    if (currentQuestion > 0) {
+      currentQuestion--;
+      renderQuestion();
+    }
+  }
+
+  function nextQuestion() {
+    const section = questions[currentSection];
+    if (currentQuestion < section.questions.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else if (currentSection < questions.length - 1) {
+      clearInterval(timerInterval);
+      startSection(currentSection + 1);
+    } else {
+      submitTest();
+    }
+  }
+
+  function startTimer(duration) {
+    let time = duration;
+    const timerEl = document.getElementById("timer");
+
+    function update() {
+      const minutes = String(Math.floor(time / 60)).padStart(2, "0");
+      const seconds = String(time % 60).padStart(2, "0");
+      timerEl.textContent = '${minutes}:${seconds}';
+      if (time <= 0) {
+        clearInterval(timerInterval);
+        nextQuestion();
+      }
+      time--;
+    }
+
+    clearInterval(timerInterval);
+    update();
+    timerInterval = setInterval(update, 1000);
+  }
+
+  function calculateScore() {
+    let correct = 0;
+    let total = 0;
+
+    questions.forEach((section, i) => {
+      section.questions.forEach((q, j) => {
+        const key = 'q-${i}-${j}';
+        if (userAnswers[key] && userAnswers[key] === q.answer) correct++;
+        total++;
+      });
+    });
+
+    return { correct, total, score: Math.round((correct / total) * 100) };
+  }
+
+  function updateTempScore() {
+    const result = calculateScore();
+    document.getElementById("tempScore").textContent = result.score;
+  }
+
+  function submitTest() {
+    clearInterval(timerInterval);
+    const result = calculateScore();
+
+    document.getElementById("test").classList.add("hidden");
+    document.getElementById("results").classList.remove("hidden");
+
+    document.getElementById("score").textContent = result.score;
+
+    // Simpan ke riwayat (optional)
+    const history = document.getElementById("testHistory");
+    const li = document.createElement("li");
+    li.textContent = 'Skor: ${result.score}% (${result.correct}/${result.total})';
+    history.appendChild(li);
+  }
+
+  function downloadCertificate() {
+    alert("Fitur download sertifikat belum tersedia.");
+  }
+
+  function editProfile() {
+    alert("Fitur edit profil belum tersedia.");
+  }
+
+  // Auto show home saat awal load
+  showPage('home');
+</script>
 
     </div>
+
+    
 </body>
 
 </html>
