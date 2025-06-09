@@ -3,8 +3,11 @@ const questions = [
     section: "Listening",
     time: 1800, 
     questions: [
-      { text: "What is the main topic of the talk?", options: ["Weather", "School", "Music", "Travel"] },
-      { text: "What does the speaker imply?", options: ["She's late", "She agrees", "She disagrees", "She’s happy"] },
+      { text: "questions 1", options: ["He knew that cherries were pricier than.", "He bought cherries and grapes because of not knowing their prices.", "He didn't know that cherries were pricier than grapes.", "He didn't buy either grapes or cherries because both were pricy."] },
+      { text: "questions 2", options: ["She felt it wasn't fair.", "She was in rage.", "She felt inferior.", "She wasn't furious."] },
+      { text: "questions 3", options: ["He is unhappy at the thought of retiring.", "He hates to leave his job soon.", "He is retiring too fast.", "He is eager to leave his job"] },
+      { text: "questions 4", options: ["The rent was given by her for Tom.", "She was asked money for paying the rent.", "Tom gave her money for the rent.", "The money was lent by Tom early this month."] },
+      { text: "questions 5", options: ["She shouldn't leave her purse here.", "She's probably in the apartment.", "Her purse must not be in the apartment.", "She left the apartment without taking her purse."] },
     ]
   },
   {

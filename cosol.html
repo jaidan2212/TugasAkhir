@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TOEFL Reading Test</title>
+  <link rel="stylesheet" href="cosol.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Reading Test - Question 1</h2>
+
+    <!-- AUDIO -->
+    <audio id="audio-question" controls>
+      <source src="soal1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- QUESTION -->
+    <p>What is the main idea of the passage you just heard?</p>
+    <ul>
+      <li><input type="radio" name="q1" value="a"> A. The evolution of language</li>
+      <li><input type="radio" name="q1" value="b"> B. The history of English grammar</li>
+      <li><input type="radio" name="q1" value="c"> C. The development of writing systems</li>
+      <li><input type="radio" name="q1" value="d"> D. The influence of Latin</li>
+    </ul>
+
+    <button onclick="submitAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="cosol.js"></script>
+</body>
+</html>
