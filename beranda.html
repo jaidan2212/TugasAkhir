@@ -51,8 +51,8 @@
 
 <body>
     <nav>
-        <a href="Dashboard.html" onclick="showPage('dashboard')">Dashboard</a>
-        <a href="Beranda.html" onclick="showPage('home')">Beranda</a>
+        <a href="Dashboard.html" onclick="showPage(`dashboard`)">Dashboard</a>
+        <a href="Beranda.html" onclick="showPage(`home`)">Beranda</a>
     </nav>
     <div class="container">
         <div id="home">Selamat datang di platform TOEFL!</div>
@@ -126,14 +126,14 @@
   function renderQuestion() {
     const section = questions[currentSection];
     const q = section.questions[currentQuestion];
-    const key = 'q-${currentSection}-${currentQuestion}';
+    const key = `q-${currentSection}-${currentQuestion}`;
 
-    let html = '<div class="question"><strong>${q.text}</strong><br>';
+    let html = `<div class="question"><strong>${q.text}</strong><br>`;
     q.options.forEach(opt => {
       const checked = userAnswers[key] === opt ? "checked" : "";
-      html += '<label><input type="radio" name="answer" value="${opt}" ${checked} onchange="selectAnswer(${key}, ${opt})"> ${opt}</label><br>';
+      html += `<label><input type="radio" name="answer" value="${opt}" ${checked} onchange="selectAnswer(${key}, ${opt})"> ${opt}</label><br>`;
     });
-    html += '</div>';
+    html += `</div>`;
 
     document.getElementById("questionBox").innerHTML = html;
     updateTempScore();
@@ -170,7 +170,7 @@
     function update() {
       const minutes = String(Math.floor(time / 60)).padStart(2, "0");
       const seconds = String(time % 60).padStart(2, "0");
-      timerEl.textContent = '${minutes}:${seconds}';
+      timerEl.textContent = `${minutes}:${seconds}`;
       if (time <= 0) {
         clearInterval(timerInterval);
         nextQuestion();
@@ -189,7 +189,7 @@
 
     questions.forEach((section, i) => {
       section.questions.forEach((q, j) => {
-        const key = 'q-${i}-${j}';
+        const key = `q-${i}-${j}`;
         if (userAnswers[key] && userAnswers[key] === q.answer) correct++;
         total++;
       });
@@ -215,7 +215,7 @@
     // Simpan ke riwayat (optional)
     const history = document.getElementById("testHistory");
     const li = document.createElement("li");
-    li.textContent = 'Skor: ${result.score}% (${result.correct}/${result.total})';
+    li.textContent = `Skor: ${result.score}% (${result.correct}/${result.total})`;
     history.appendChild(li);
   }
 
@@ -228,7 +228,7 @@
   }
 
   // Auto show home saat awal load
-  showPage('home');
+  showPage(`home`);
 </script>
 
     </div>
