@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOEFL Test Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background: #333; color: white; padding: 10px; display: flex; gap: 20px; }
+    nav a { color: white; text-decoration: none; }
+    .container { padding: 20px; }
+    .hidden { display: none; }
+    .question { margin-bottom: 10px; }
+    .leaderboard, .certificate { margin-top: 20px; }
+    .score-preview { margin: 10px 0; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Dashboard.html" onclick="showPage('dashboard')">Dashboard</a>
+    <a href="Test.html" onclick="showPage('test')">Test</a>
+    <a href="Beranda.html" onclick="showPage('home')">Beranda</a>
+  </nav>
+  <div class="container">
+    <div id="home">Selamat datang di platform TOEFL!</div><div id="dashboard" class="hidden">
+  <h2>Dashboard</h2>
+  <div>Nama: <span id="userName">Zaidan</span></div>
+  <div>Riwayat Tes:</div>
+  <ul id="testHistory"></ul>
+  <button onclick="editProfile()">Edit Profil</button>
+</div>
+
+<div id="test" class="hidden">
+  <h2>TOEFL Test</h2>
+  <div>
+    <label>
+      Mode:
+      <select id="mode">
+        <option value="ujian">Ujian</option>
+        <option value="latihan">Latihan</option>
+      </select>
+    </label>
+  </div>
+  <div id="questionBox"></div>
+  <button onclick="prevQuestion()">Sebelumnya</button>
+  <button onclick="nextQuestion()">Berikutnya</button>
+  <div class="score-preview">Skor Sementara: <span id="tempScore">0</span></div>
+  <div>Timer: <span id="timer">00:00</span></div>
+  <button onclick="submitTest()">Selesai</button>
+</div>
+
+<div id="results" class="hidden">
+  <h2>Hasil Test</h2>
+  <p>Skor Anda: <span id="score">0</span></p>
+  <div id="pembahasan"></div>
+  <div class="leaderboard">
+    <h3>Leaderboard</h3>
+    <ul id="leaderboardList"></ul>
+  </div>
+  <div class="certificate">
+    <button onclick="downloadCertificate()">Download Sertifikat PDF</button>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>
