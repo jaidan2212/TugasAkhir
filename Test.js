@@ -7,7 +7,7 @@ const questions = [
       { text: "questions 2", options: ["She felt it wasn't fair.", "She was in rage.", "She felt inferior.", "She wasn't furious."] },
       { text: "questions 3", options: ["He is unhappy at the thought of retiring.", "He hates to leave his job soon.", "He is retiring too fast.", "He is eager to leave his job"] },
       { text: "questions 4", options: ["The rent was given by her for Tom.", "She was asked money for paying the rent.", "Tom gave her money for the rent.", "The money was lent by Tom early this month."] },
-      { text: "questions 5", options: ["She shouldn't leave her purse here.", "She's probably in the apartment.", "Her purse must not be in the apartment.", "She left the apartment without taking her purse."] },
+      { text: "questions 5", options: ["She shouldn't leave her purse here.", "She's probably in the apartment.", "Her purse must not be in the apartment.", "She left the apartment without taking her purse."] },
     ]
   },
   {
@@ -143,7 +143,7 @@ function renderQuestion() {
       ${userAnswers[name] === opt ? 'checked' : ''}> ${opt}</label><br>`;
   }).join("");
 
-  document.getElementById("options-container").innerHTML = optionsHtml;
+  document.getElementById("options-container").innerHTML = optionsHtml;
 }
 
 
