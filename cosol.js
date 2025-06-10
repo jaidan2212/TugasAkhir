@@ -17,6 +17,6 @@ function submitAnswer() {
   if (selected === "a") {
     document.getElementById('result').textContent = "✅ Correct!";
   } else {
-    document.getElementById('result').textContent = "❌ Wrong. Try again.";
+    document.getElementById('result').textContent = "❌ Wrong. Try again.";
   }
 }
