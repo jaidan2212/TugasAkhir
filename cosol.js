@@ -18,5 +18,5 @@ function submitAnswer() {
     document.getElementById('result').textContent = "✅ Correct!";
   } else {
     document.getElementById('result').textContent = "❌ Wrong. Try again.";
-  }
+  }
 }
