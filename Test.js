@@ -47,7 +47,7 @@ const questions = [
       ]
     },
     {
-     
+    
       passage: "Tommy was late for school again. He had forgotten to set his alarm. As he rushed to get ready, he realized he also forgot to finish his homework. When he arrived at school, his teacher was angry, but Tommy explained what happened honestly. Surprisingly, the teacher smiled and said, 'Everyone makes mistakes. Just try to do better next time.' Tommy felt relieved and promised to be more responsible in the future.",
       text: "What lesson did Tommy learn from the incident?",
       options: [
@@ -76,10 +76,10 @@ const questions = [
         "Getting lost in the mountains is fun.",
         "School trips are always dangerous.",
         "Friends should always bring snacks.",
-        "Staying calm helps in difficult situations."
-      ]
-    }
-  ]
+        "Staying calm helps in difficult situations."
+      ]
+    }
+  ]
 }
 
 ];
