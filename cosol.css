@@ -23,4 +23,12 @@ li {
 button {
   margin-top: 10px;
   padding: 8px 16px;
+  background-color: #5bd35b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #238323;
 }
