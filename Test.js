@@ -1,7 +1,7 @@
 const questions = [
   {
     section: "Listening",
-    time: 600, 
+    time: 3600,
     questions: [
       { text: "questions 1", options: ["He knew that cherries were pricier than.", "He bought cherries and grapes because of not knowing their prices.", "He didn't know that cherries were pricier than grapes.", "He didn't buy either grapes or cherries because both were pricy."] },
       { text: "questions 2", options: ["She felt it wasn't fair.", "She was in rage.", "She felt inferior.", "She wasn't furious."] },
@@ -12,7 +12,7 @@ const questions = [
   },
   {
     section: "Structure",
-    time: 600,
+    time: 3600,
     questions: [
       { text: "The professor along with his students ___ at the conference yesterday.", options: ["were", "was", "have been", "are"] },
       { text: "Neither the teacher nor the students ___ able to solve the problem.", options: ["is", "was", "are", "has"] },
@@ -26,70 +26,94 @@ const questions = [
       { text: "The giant ragweed, or buffalo weed, grows ___", options: ["18 feet up to high", "to high 18 feet up", "up to 18 feet high", "18 feet high up to"] },
       { text: "Neptune is ___ any planet except Pluto.", options: ["to be far from the Sun", "far from the Sun being", "farther than the Sun is", "farther from the Sun than"] },
       { text: "Since prehistoric times, artists have arranged paint on surfaces in ways ___ their ideas about people and the world.", options: ["express", "that their expression of", "which, expressing", "that express"] },
+      { text: "Except for certain microorganisms, ___need oxygen to survive.", options: ["of all living things", "all living things", "all are living things", "are all living things"] },
+      { text: "Dubbing is used in filmmaking ___ a new sound track to a motion picture.", options: ["which to add", "to add", "is adding that", "to add while"] },
+      { text: "The importance of the hand, and more generally of the body, in children's acquisition of arithmetic ___", options: ["can hardly be exaggerated", "can be exaggerate hardly", "hardly exaggerated can be", "exaggerated can be hardly"] },
+      { text: "___ is present in the body in greater amounts than any other mineral.", options: ["Calcium", "There is calcium", "Calcium, which", "It is calcium"] },
+      { text: "Mike is the only one of those students who ___ passed the exam.", options: ["have", "has", "are", "is"] },
+      { text: "John, along with his friends, ___ going to the party.", options: ["are", "is", "have", "has"] },
+      { text: "She ___ a letter when I came.", options: ["wrote", "was writing", "has written", "writes"] },
+      { text: "If it ___, we will stay at home.", options: ["rains", "will rain", "rained", "rain"] },
+      { text: "They ___ TV when the phone rang.", options: ["watched", "were watching", "are watching", "watch"] },
+      { text: "Despite of ___, he managed to finish his homework on time.", options: ["tired", "tiredness", "tiring", "to tire"] },
+      { text: "_, she could not answer the question.", options: ["As much as she tried", "As she much tried", "As tried she much", "As much tried she"] },
+      { text: "The pie, ____ was very delicious, was made by Grandma.", options: ["which", "who", "where", "whose"] },
+      { text: "The book ____ Mary was reading is very interesting.", options: ["who", "whom", "where", "that"] },
+      { text: "The man ____ lives next door is very friendly.", options: ["who", "which", "where", "whom"] },
+      { text: "The teacher, along with her students, ___ going to the museum.", options: ["are", "were", "is", "have been"] },
+      { text: "Neither the director nor the actors ___ happy with the final scene.", options: ["was", "is", "are", "being"] },
+      { text: "Each of the applicants ___ a resume with their application.", options: ["submit", "submitting", "submitted", "submits"] },
+      { text: "There ___ a lot of noise in the hallway during the test.", options: ["was", "were", "are", "is"] }, 
+      { text: "If he ___ earlier, he would have caught the bus.", options: ["left", "had left", "leaves", "was leaving"] }, 
+      { text: "The manager demanded that the report ___ immediately.", options: ["is completed", "completes", "be completed", "will be completed"] }, 
+      { text: "Not only the students but also the teacher ___ excited about the trip.", options: ["are", "were", "is", "have"] }, 
+      { text: "The book ___ she borrowed from the library is very interesting.", options: ["which", "whom", "who", "what"] }, 
+      { text: "By the time we arrived, the play ___.", options: ["had begun", "have begun", "begun", "begins"] }, 
+      { text: "She would have passed the exam if she ___ harder.", options: ["studied", "had studied", "has studied", "would study"] },
+      { text: "The committee suggested that he ___ the proposal before the meeting.", options: ["reviews", "reviewed", "review", "will review"] },
+      { text: "The more you practice, ___ you will become.", options: ["the more skillful", "more skillful", "skillful", "most skillful"] },
+      { text: "It was not until the lights went out ___ I realized how dark it was.", options: ["then", "that", "when", "so"] }, 
+      { text: "The painting, along with the sculptures, ___ on display until next month.", options: ["is", "are", "were", "be"] }
     ]
   },
   {
-  section: "Reading",
-  time: 600,
-  questions: [
-    {
-      passage: "Once upon a time, there was a small village where people lived happily and helped each other. In the center of the village, there was a big tree that gave shade to children playing around. One day, a traveler came to the village. He was tired and hungry. The villagers welcomed him, gave him food, and let him rest under the big tree. The traveler was so touched that he promised to return and help the village someday. Years passed, and one day, a large truck came to the village. The traveler had become a rich man. He built a school and a clinic for the villagers, fulfilling his promise.",
-      text: "What is the main idea of the story?",
-      options: [
-        "The traveler forgot about the village.",
-        "The villagers were selfish and unkind.",
-        "Kindness leads to good things in return.",
-        "The tree was magical and gave fortune."
-      ]
-    },
-    {
-
-      passage: "Dina was a student who loved to read books, especially mystery novels. One day, while reading at the library, she noticed a small, dusty book with no title. Curious, she opened it and found that the story inside seemed to change every time she read it. The characters would speak differently, and the ending was never the same. Dina was fascinated and spent days trying to understand it. In the end, she realized the book reflected her own thoughts and feelings.",
-      text: "Why did the story in the book seem to change every time Dina read it?",
-      options: [
-        "The book was broken.",
-        "The library staff changed the story.",
-        "The book responded to her emotions.",
-        "The book was written in many languages."
-      ]
-    },
-    {
-    
-      passage: "Tommy was late for school again. He had forgotten to set his alarm. As he rushed to get ready, he realized he also forgot to finish his homework. When he arrived at school, his teacher was angry, but Tommy explained what happened honestly. Surprisingly, the teacher smiled and said, 'Everyone makes mistakes. Just try to do better next time.' Tommy felt relieved and promised to be more responsible in the future.",
-      text: "What lesson did Tommy learn from the incident?",
-      options: [
-        "It's okay to lie if you're in trouble.",
-        "Being honest can lead to understanding.",
-        "Homework is not important.",
-        "Teachers don’t care about rules."
-      ]
-    },
-    {
-
-      passage: "Nina always wanted to be a doctor. Since she was a child, she loved helping others. Her parents were farmers, and they couldn’t afford expensive education, but Nina studied hard and got a scholarship to a medical school. At university, she faced many challenges, but she never gave up. After years of study, she finally became a doctor and returned to her village to open a small clinic, helping people who once helped her.",
-      text: "What does the story tell us about Nina?",
-      options: [
-        "She gave up on her dream due to money.",
-        "She wanted to be a teacher in her village.",
-        "She worked hard to achieve her dream.",
-        "She never liked helping people."
-      ]
-    },
-    {
-
-      passage: "During a school trip to the mountains, Ardi and his friends got separated from the group. They didn’t panic, but they tried to remember what the guide had told them. Using a compass and a map, they found a way back to the camp after three hours. Everyone was worried, but also proud of them for staying calm and working together.",
-      text: "What is the main lesson from the story?",
-      options: [
-        "Getting lost in the mountains is fun.",
-        "School trips are always dangerous.",
-        "Friends should always bring snacks.",
-        "Staying calm helps in difficult situations."
-      ]
-    }
-  ]
-}
-
+    section: "Reading",
+    time: 3600,
+    questions: [
+      {
+        passage: "Once upon a time, there was a small village where people lived happily and helped each other...",
+        text: "What is the main idea of the story?",
+        options: [
+          "The traveler forgot about the village.",
+          "The villagers were selfish and unkind.",
+          "Kindness leads to good things in return.",
+          "The tree was magical and gave fortune."
+        ]
+      },
+      {
+        passage: "Dina was a student who loved to read books...",
+        text: "Why did the story in the book seem to change every time Dina read it?",
+        options: [
+          "The book was broken.",
+          "The library staff changed the story.",
+          "The book responded to her emotions.",
+          "The book was written in many languages."
+        ]
+      },
+      {
+        passage: "Tommy was late for school again...",
+        text: "What lesson did Tommy learn from the incident?",
+        options: [
+          "It's okay to lie if you're in trouble.",
+          "Being honest can lead to understanding.",
+          "Homework is not important.",
+          "Teachers don’t care about rules."
+        ]
+      },
+      {
+        passage: "Nina always wanted to be a doctor...",
+        text: "What does the story tell us about Nina?",
+        options: [
+          "She gave up on her dream due to money.",
+          "She wanted to be a teacher in her village.",
+          "She worked hard to achieve her dream.",
+          "She never liked helping people."
+        ]
+      },
+      {
+        passage: "During a school trip to the mountains...",
+        text: "What is the main lesson from the story?",
+        options: [
+          "Getting lost in the mountains is fun.",
+          "School trips are always dangerous.",
+          "Friends should always bring snacks.",
+          "Staying calm helps in difficult situations."
+        ]
+      }
+    ]
+  }
 ];
+
 
 let sectionIndex = 0;
 let questionIndex = 0;
@@ -229,6 +253,35 @@ const answerKey = {
     "up to 18 feet high",
     "farther from the Sun than",
     "that express",
+    "all living things",
+    "to add",
+    "has",
+    "can hardly be exaggerated",
+    "Calcium",
+    "has",
+    "is",
+    "was writing",
+    "rains",
+    "were watching",
+    "tiredness",
+    "As much as she tried",
+    "which",
+    "that",
+    "who",
+    "is",          
+    "are",          
+    "submits",      
+    "was",          
+    "had left",     
+    "be completed", 
+    "is",           
+    "which",        
+    "had begun",    
+    "had studied",  
+    "review",       
+    "the more skillful", 
+    "that",        
+    "is"
   ],
   Reading: [
     "Kindness leads to good things in return.",
