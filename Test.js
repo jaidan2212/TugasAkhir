@@ -113,7 +113,6 @@ function renderQuestion() {
 function renderQuestion() {
   const currentQ = questions[sectionIndex].questions[questionIndex];
 
-  // Tampilkan audio jika di section Listening
   const audioContainer = document.getElementById("audio-container");
   if (questions[sectionIndex].section === "Listening") {
     audioContainer.innerHTML = `
@@ -126,7 +125,6 @@ function renderQuestion() {
     audioContainer.innerHTML = ""; 
   }
 
-  // Tampilkan passage jika ada
   const passageContainer = document.getElementById("passage-container");
   if (currentQ.passage) {
     passageContainer.innerHTML = `
@@ -138,10 +136,8 @@ function renderQuestion() {
     passageContainer.innerHTML = "";
   }
 
-  // Tampilkan teks pertanyaan
   document.getElementById("question-text").textContent = currentQ.text;
 
-  // Tampilkan pilihan jawaban
   const name = `q-${sectionIndex}-${questionIndex}`;
   const optionsHtml = currentQ.options.map((opt) => {
     return `<label><input type="radio" name="${name}" value="${opt}" 
@@ -264,7 +260,6 @@ function calculateScore() {
 
   sectionScores.totalScore = totalScore;
 
-  // simpan hasil ke localStorage untuk dashboard
   const testResult = {
     date: formattedDate,
     listening: sectionScores.Listening.correct,
@@ -274,7 +269,6 @@ function calculateScore() {
   };
   saveTestResult(testResult);
 
-  // tampilkan halaman selesai
   document.querySelector("#main-test-content").style.display = "none";
   document.querySelector("#result-page").style.display = "block";
   document.getElementById("score-display").textContent = `Skor Anda: ${totalScore} dari ${totalQuestions}`;
