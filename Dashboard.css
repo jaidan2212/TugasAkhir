@@ -10,7 +10,6 @@ header {
   padding: 15px 30px;
   display: flex;
   align-items: center;
-  
 }
 
 .container {
@@ -49,6 +48,16 @@ th, td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+}
+
+.test button {
+  padding: 10px 20px;
+  background-color: #2d5be3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .profile-box,

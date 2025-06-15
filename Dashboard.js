@@ -67,3 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     tbody.appendChild(row);
   });
 });
+
+function resetHistory() {
+  localStorage.removeItem("testHistory");
+  document.getElementById("test-history-body").innerHTML = ""; // Kosongkan tampilan tabel
+  alert("Riwayat tes berhasil dihapus.");
+}
