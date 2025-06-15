@@ -8,6 +8,53 @@ const questions = [
       { text: "questions 3", options: ["He is unhappy at the thought of retiring.", "He hates to leave his job soon.", "He is retiring too fast.", "He is eager to leave his job"] },
       { text: "questions 4", options: ["The rent was given by her for Tom.", "She was asked money for paying the rent.", "Tom gave her money for the rent.", "The money was lent by Tom early this month."] },
       { text: "questions 5", options: ["She shouldn't leave her purse here.", "She's probably in the apartment.", "Her purse must not be in the apartment.", "She left the apartment without taking her purse."] },
+    {
+    text: "questions 6",
+    options: [
+      "He didn’t try because he had already passed.",
+      "He failed intentionally.",
+      "He didn’t prepare due to working late hours.",
+      "He thought the test was easy so didn’t study."
+    ]
+  },
+  {
+    text: "questions 7",
+    options: [
+      "Linda didn’t eat much.",
+      "Linda has a good appetite.",
+      "Linda dislikes buffet food.",
+      "Linda prefers to eat alone."
+    ]
+  },
+  {
+    text: "questions 8",
+    options: [
+      "The professor did not accept the paper.",
+      "The professor canceled the assignment.",
+      "He hasn't submitted the paper because of an extension.",
+      "He turned it in late without permission."
+    ]
+  },
+  {
+    text: "questions 9",
+    options: [
+      "She lost her phone permanently.",
+      "She forgot her phone at home.",
+      "She didn’t feel like talking to anyone.",
+      "She had no service on her phone."
+    ]
+  },
+  {
+    text: "questions 10",
+    options: [
+      "He’s moving to New York for a job.",
+      "He’s visiting his sister who now lives there.",
+      "He’s going to New York on a business trip.",
+      "He is going with his sister to New York."
+    ]
+  }
+
+
     ]
   },
   {
@@ -379,7 +426,7 @@ function renderQuestion() {
   if (questions[sectionIndex].section === "Listening") {
     audioContainer.innerHTML = `
       <audio id="audio-question" controls>
-        <source src="audio lat.mp3" type="audio/mpeg">
+        <source src="audio test 1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     `;
@@ -469,7 +516,12 @@ const answerKey = {
     "She wasn't furious.",
     "He is unhappy at the thought of retiring.",
     "Tom gave her money for the rent.",
-    "She's probably in the apartment."
+    "She's probably in the apartment.",
+    "He didn’t prepare due to working late hours.",
+    "Linda has a good appetite.",
+    "He hasn't submitted the paper because of an extension.",
+    "She forgot her phone at home.",
+    "He’s visiting his sister who now lives there."
   ],
   Structure: [
     "was",
