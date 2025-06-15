@@ -18,7 +18,14 @@ const questions = [
       { text: "Neither the teacher nor the students ___ able to solve the problem.", options: ["is", "was", "are", "has"] },
       { text: "Each of the books on the shelf ___ a different story.", options: ["have", "are", "has", "were"] },
       { text: "The committee ___ not yet reached a decision.", options: ["has", "have", "is", "are"] },
-      { text: "If he ___ more time, he would finish the project.", options: ["has", "had", "have", "having"] },      
+      { text: "If he ___ more time, he would finish the project.", options: ["has", "had", "have", "having"] },
+      { text: "The research paper must be submitted ___ Friday.", options: ["in", "on", "at", "by"] },
+      { text: "Each of the students in the class ___ responsible for doing their own work.", options: ["are", "is", "ware", "be"] },
+      { text: "It is important that he ___ to the meeting on time.", options: ["come", "comes", "came", "had come"] },
+      { text: "She has not eaten anything ___ yesterday.", options: ["since", "for", "until", "by"] },
+      { text: "The giant ragweed, or buffalo weed, grows ___", options: ["18 feet up to high", "to high 18 feet up", "up to 18 feet high", "18 feet high up to"] },
+      { text: "Neptune is ___ any planet except Pluto.", options: ["to be far from the Sun", "far from the Sun being", "farther than the Sun is", "farther from the Sun than"] },
+      { text: "Since prehistoric times, artists have arranged paint on surfaces in ways ___ their ideas about people and the world.", options: ["express", "that their expression of", "which, expressing", "that express"] },
     ]
   },
   {
@@ -214,7 +221,14 @@ const answerKey = {
     "are",
     "has",
     "has",
-    "had"
+    "had",
+    "by",
+    "is",
+    "come",
+    "since",
+    "up to 18 feet high",
+    "farther from the Sun than",
+    "that express",
   ],
   Reading: [
     "Kindness leads to good things in return.",
