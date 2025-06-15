@@ -87,7 +87,7 @@ const questions = [
           "It's okay to lie if you're in trouble.",
           "Being honest can lead to understanding.",
           "Homework is not important.",
-          "Teachers don’t care about rules."
+          "Teachers dont care about rules."
         ]
       },
       {
@@ -111,11 +111,11 @@ const questions = [
         ]
       },
       {
-        passage: "As Philadelphia grew from a small town into a city in the fi rst half of the eighteenth century, it became an increasingly important marketing center for a vast and growing agricultural hinterland. Market days saw the crowded city even more crowded, as fanners from within a radius of 24 or more kilometers brought their sheep, cows, pigs, vegetables, cider, and other products for direct sale to the townspeople. The High Street Market was continuously enlarged throughout the period until 1736, when it reached from Front Street to Third. By 1745 New Market was opened on Second Street between Pine and Cedar. The next year the Callowhill Market began operation. Along with market days, the institution of twiceyearly fairs persisted in Philadelphia even after similar trading days had been discontinued in other colonial cities. The fairs provided a means of bringing handmade goods from outlying places to would-be buyers in the city. Linens and stockings from Germantown, for example, were popular items. Auctions were another popular form of occasional trade. Because of the competition, retail merchants opposed these as well as the fairs. Although governmental attempts to eradicate fairs and auctions were less than successful, the ordinary course of economic development was on the merchants’ side, as increasing business specialization became the order of the day. Export merchants became differentiated from their importing counterparts, and specialty shops began to appear in addition to general stores selling a variety of goods. One of the reasons Philadelphia’s merchants generally prospered was because the surrounding area was undergoing tremendous economic and demographic growth. They did their business, after all, in the capital city of the province. Not only did they cater to the governor and his circle, but citizens from all over the colony came to the capital for legislative sessions of the assembly and council and the meetings of the courts of justice.",
+        passage: "As Philadelphia grew from a small town into a city in the first half of the eighteenth century, it became an increasingly important marketing center for a vast and growing agricultural hinterland. Market days saw the crowded city even more crowded, as fanners from within a radius of 24 or more kilometers brought their sheep, cows, pigs, vegetables, cider, and other products for direct sale to the townspeople. The High Street Market was continuously enlarged throughout the period until 1736, when it reached from Front Street to Third. By 1745 New Market was opened on Second Street between Pine and Cedar. The next year the Callowhill Market began operation. Along with market days, the institution of twiceyearly fairs persisted in Philadelphia even after similar trading days had been discontinued in other colonial cities. The fairs provided a means of bringing handmade goods from outlying places to would-be buyers in the city. Linens and stockings from Germantown, for example, were popular items. Auctions were another popular form of occasional trade. Because of the competition, retail merchants opposed these as well as the fairs. Although governmental attempts to eradicate fairs and auctions were less than successful, the ordinary course of economic development was on the merchants’ side, as increasing business specialization became the order of the day. Export merchants became differentiated from their importing counterparts, and specialty shops began to appear in addition to general stores selling a variety of goods. One of the reasons Philadelphia’s merchants generally prospered was because the surrounding area was undergoing tremendous economic and demographic growth. They did their business, after all, in the capital city of the province. Not only did they cater to the governor and his circle, but citizens from all over the colony came to the capital for legislative sessions of the assembly and council and the meetings of the courts of justice.",
         text: "What does the passage mainly discuss?",
         options: [
-          "Philadelphia’s agriculture importance.",
-          "Philadelphia’s development as a marketing center.",
+          "Philadelphias agriculture importance.",
+          "Philadelphias development as a marketing center.",
           "The sale of imported goods in Philadelphia.",
           "The administration of the city of Philadelphia."
         ]
@@ -148,7 +148,7 @@ const questions = [
         ]
       },
       {
-        text: "What does the author mean by stating in line 17 that “economic development was on the merchants’ side”?",
+        text: "What does the author mean by stating in line 17 that “economic development was on the merchants side”?",
         options: [
           "Merchants had a strong impact on economic expansion.",
           "Economic forces allowed merchants to prosper.",
@@ -231,7 +231,7 @@ const questions = [
         ]
       },
       {
-        text: "According to the passage, one important change in United States education by the 1920’s was that",
+        text: "According to the passage, one important change in United States education by the 1920s was that",
         options: [
           "most places required children to attend school.",
           "the amount of time spent on formal education was limited.",
@@ -252,10 +252,10 @@ const questions = [
         passage: " Aviculturists, people who raise birds for commercial sale, have not yet learned how to simulate the natural incubation of parrot eggs in the wild. They continue to look for better ways to increase egg production and to improve chick survival rates. When parrots incubate their eggs in the wild, the temperature and humidity of the nest are controlled naturally. Heat is transferred from the bird’s skin to the top portion of the eggshell, leaving the sides and bottom of the egg at a cooler temperature. This temperature gradient may be vital to successful hatching. Nest construction can contribute to this temperature gradient. Nests of loosely arranged sticks, rocks, or dirt are cooler in temperature at the bottom where the egg contacts the nesting material. Such nests also act as humidity regulators by allowing rain to drain into the bottom sections of the nest so that the eggs are not in direct contact with the water. As the water that collects in the bottom of the nest evaporates, the water vapor rises and is heated by the incubating bird, which adds signifi cant humidity to the incubation environment. In artifi cial incubation programs, aviculturists remove eggs from the nests of parrots and incubate them under laboratory conditions.Most commercial incubators heat the eggs fairly evenly from top to bottom, thus ignoring the bird’s method of natural incubation, and perhaps reducing the viability and survivability of the hatching chicks.When incubators are not used, aviculturists sometimes suspend wooden boxes outdoors to use as nests in which to place eggs.In areas where weather can become cold after eggs are laid, it is very important to maintain a deep foundation of nesting material to act as insulator against the cold bottom of the box.If eggs rest against the wooden bottom in extremely cold weather conditions, they can become chilled to a point where the embryo can no longer survive.Similarly, these boxes should be protected from direct sunlight to avoid high temperatures that are also fatal to the growing embryo.Nesting material should be added in suffi cient amounts to avoid both extreme temperature situations mentioned above and assure that the eggs have a soft, secure place to rest.",
         text: " What is the main idea of the passage?",
         options: [
-          " Nesting material varies according to the parrots’ environment.",
-          " Humidity is an important factor in incubating parrots’ eggs.",
+          " Nesting material varies according to the parrots environment.",
+          " Humidity is an important factor in incubating parrots eggs.",
           " Aviculturists have constructed the ideal nest box for parrots.",
-          " Wild parrots’ nests provide information useful for artificial incubation."
+          " Wild parrots nests provide information useful for artificial incubation."
         ]
       },
       {
@@ -279,7 +279,7 @@ const questions = [
       {
         text: "According to paragraph 2, the construction of the nest allows water to",
         options: [
-          "provide a benefi cial source of humidity in the nest",
+          "provide a beneficial source of humidity in the nest",
           " loosen the materials at the bottom of the nest.",
           " keep the nest in a clean condition.",
           " touch the bottom of the eggs."
@@ -295,7 +295,7 @@ const questions = [
         ]
       },
       {
-        passage: "A number of factors related to the voice reveal the personality of the speaker. The fi rst is the broad area of communication, which includes imparting information by use of language, communicating with a group or an individual, and specialized communication through performance. A person conveys thoughts and ideas through choice of words, by a tone of voice that is pleasant or unpleasant, gentle or harsh, by the rhythm that is inherent within the language itself, and by speech rhythms that are fl owing and regular or uneven and hesitant, and fi nally, by the pitch and melody of the utterance. When speaking before a group, a person’s tone may indicate unsureness or fright, confi dence or calm. At interpersonal levels, the tone may refl ect ideas and feelings over and above the words chosen, or may belie them. Here the conversant’s tone can consciously or unconsciously refl ect intuitive sympathy or antipathy, lack of concern or interest, fatigue, anxiety, enthusiasm or excitement, all of which are .usually discernible by the acute listener. Public performance is a manner of communication that is highly specialized with its own techniques for obtaining effects by voice and / or gesture. The motivation derived from the text, and in the case of singing, the music, in combination with the performer’s skills, personality, and ability to create empathy will determine the success of artistic, political, or pedagogic communication. Second, the voice gives psychological clues to a person’s self-image, perception of others, and emotional health. Self-image can be indicated by a tone of voice that is confi dent, pretentious, shy, aggressive, outgoing, or exuberant, to name only a few personality traits. Also the sound may give a clue to the facade or mask of that person, for example, a shy person hiding behind an overconfi dent front. How a speaker perceives the listener’s receptiveness, interest, or sympathy in any given conversation can drastically alter the tone of presentation, by encouraging or discouraging the speaker. Emotional health is evidenced in the voice by free and melodic sounds of the happy, by constricted and harsh sound of the angry, and by dull and lethargic qualities of the depressed.",
+        passage: "A number of factors related to the voice reveal the personality of the speaker. The first is the broad area of communication, which includes imparting information by use of language, communicating with a group or an individual, and specialized communication through performance. A person conveys thoughts and ideas through choice of words, by a tone of voice that is pleasant or unpleasant, gentle or harsh, by the rhythm that is inherent within the language itself, and by speech rhythms that are flowing and regular or uneven and hesitant, and finally, by the pitch and melody of the utterance. When speaking before a group, a persons tone may indicate unsureness or fright, confidence or calm. At interpersonal levels, the tone may reflect ideas and feelings over and above the words chosen, or may belie them. Here the conversants tone can consciously or unconsciously refl ect intuitive sympathy or antipathy, lack of concern or interest, fatigue, anxiety, enthusiasm or excitement, all of which are .usually discernible by the acute listener. Public performance is a manner of communication that is highly specialized with its own techniques for obtaining effects by voice and / or gesture. The motivation derived from the text, and in the case of singing, the music, in combination with the performer’s skills, personality, and ability to create empathy will determine the success of artistic, political, or pedagogic communication. Second, the voice gives psychological clues to a person’s self-image, perception of others, and emotional health. Self-image can be indicated by a tone of voice that is confi dent, pretentious, shy, aggressive, outgoing, or exuberant, to name only a few personality traits. Also the sound may give a clue to the facade or mask of that person, for example, a shy person hiding behind an overconfi dent front. How a speaker perceives the listener’s receptiveness, interest, or sympathy in any given conversation can drastically alter the tone of presentation, by encouraging or discouraging the speaker. Emotional health is evidenced in the voice by free and melodic sounds of the happy, by constricted and harsh sound of the angry, and by dull and lethargic qualities of the depressed.",
         text: "The word “Here” in line 10 refers to?",
         options: [
           "interpersonal interactions.",
@@ -323,7 +323,7 @@ const questions = [
         ]
       },
       {
-        text: "According to the passage, an exuberant tone of voice, may be an indication of a person’s",
+        text: "According to the passage, an exuberant tone of voice, may be an indication of a persons",
         options: [
           "general physical health.",
           "personality.",
