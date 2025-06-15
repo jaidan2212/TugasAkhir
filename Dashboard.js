@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form-edit form');
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const idDisplay = document.querySelector('.profile-box p:nth-child(4)');
   const dateDisplay = document.querySelector('.profile-box p:nth-child(5)');
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const newName = nameInput.value;
@@ -33,5 +33,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     passwordInput.value = "";
+  });
+});
+
+function addResultToTable(dateStr, scores) {
+  const tbody = document.getElementById("test-history-body");
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td>${dateStr}</td>
+    <td>${scores.Listening.correct}</td>
+    <td>${scores.Structure.correct}</td>
+    <td>${scores.Reading.correct}</td>
+    <td>${scores.totalScore}</td>
+  `;
+
+  tbody.appendChild(row);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tbody = document.getElementById("test-history-body");
+  const history = JSON.parse(localStorage.getItem("testHistory")) || [];
+
+  history.forEach(result => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${result.date}</td>
+      <td>${result.listening}</td>
+      <td>${result.structure}</td>
+      <td>${result.reading}</td>
+      <td>${result.total}</td>
+    `;
+    tbody.appendChild(row);
   });
 });

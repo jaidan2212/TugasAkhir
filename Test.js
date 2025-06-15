@@ -113,6 +113,7 @@ function renderQuestion() {
 function renderQuestion() {
   const currentQ = questions[sectionIndex].questions[questionIndex];
 
+  // Tampilkan audio jika di section Listening
   const audioContainer = document.getElementById("audio-container");
   if (questions[sectionIndex].section === "Listening") {
     audioContainer.innerHTML = `
@@ -125,19 +126,23 @@ function renderQuestion() {
     audioContainer.innerHTML = ""; 
   }
 
+  // Tampilkan passage jika ada
+  const passageContainer = document.getElementById("passage-container");
   if (currentQ.passage) {
-    document.getElementById("passage-container").innerHTML = `
+    passageContainer.innerHTML = `
       <div style="background-color: #f0f8ff; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
         <strong>Reading Passage:</strong><br>${currentQ.passage}
       </div>
     `;
   } else {
-    document.getElementById("passage-container").innerHTML = "";
+    passageContainer.innerHTML = "";
   }
 
+  // Tampilkan teks pertanyaan
   document.getElementById("question-text").textContent = currentQ.text;
 
-  const name = 'q-${sectionIndex}-${questionIndex}';
+  // Tampilkan pilihan jawaban
+  const name = `q-${sectionIndex}-${questionIndex}`;
   const optionsHtml = currentQ.options.map((opt) => {
     return `<label><input type="radio" name="${name}" value="${opt}" 
       ${userAnswers[name] === opt ? 'checked' : ''}> ${opt}</label><br>`;
@@ -145,8 +150,6 @@ function renderQuestion() {
 
   document.getElementById("options-container").innerHTML = optionsHtml;
 }
-
-
 
 
 function saveAnswer() {
@@ -166,8 +169,9 @@ function nextQuestion() {
     alert("Next Exercises: " + questions[sectionIndex + 1].section);
     startSection(sectionIndex + 1);
   } else {
+    saveAnswer();
     alert("Test completed!");
-    console.log(userAnswers);
+    calculateScore();
   }
 }
 
@@ -200,3 +204,83 @@ document.getElementById("next-btn").addEventListener("click", nextQuestion);
 document.getElementById("prev-btn").addEventListener("click", prevQuestion);
 
 startSection(0); 
+
+const answerKey = {
+  Listening: [
+    "He didn't know that cherries were pricier than grapes.",
+    "She wasn't furious.",
+    "He is unhappy at the thought of retiring.",
+    "Tom gave her money for the rent.",
+    "She's probably in the apartment."
+  ],
+  Structure: [
+    "was",
+    "are",
+    "has",
+    "has",
+    "had"
+  ],
+  Reading: [
+    "Kindness leads to good things in return.",
+    "The book responded to her emotions.",
+    "Being honest can lead to understanding.",
+    "She worked hard to achieve her dream.",
+    "Staying calm helps in difficult situations."
+  ]
+};
+
+function calculateScore() {
+  let totalScore = 0;
+  let totalQuestions = 0;
+  let sectionScores = {};
+
+  questions.forEach((section, sIndex) => {
+    let correct = 0;
+    section.questions.forEach((question, qIndex) => {
+      const key = `q-${sIndex}-${qIndex}`;
+      const userAnswer = userAnswers[key];
+      const correctAnswer = answerKey[section.section][qIndex];
+
+      if (userAnswer === correctAnswer) {
+        correct++;
+      }
+    });
+
+    sectionScores[section.section] = {
+      correct,
+      total: section.questions.length,
+    };
+
+    totalScore += correct;
+    totalQuestions += section.questions.length;
+  });
+
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('id-ID', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  });
+
+  sectionScores.totalScore = totalScore;
+
+  // simpan hasil ke localStorage untuk dashboard
+  const testResult = {
+    date: formattedDate,
+    listening: sectionScores.Listening.correct,
+    structure: sectionScores.Structure.correct,
+    reading: sectionScores.Reading.correct,
+    total: totalScore
+  };
+  saveTestResult(testResult);
+
+  // tampilkan halaman selesai
+  document.querySelector("#main-test-content").style.display = "none";
+  document.querySelector("#result-page").style.display = "block";
+  document.getElementById("score-display").textContent = `Skor Anda: ${totalScore} dari ${totalQuestions}`;
+}
+function saveTestResult(result) {
+  let history = JSON.parse(localStorage.getItem("testHistory")) || [];
+  history.push(result);
+  localStorage.setItem("testHistory", JSON.stringify(history));
+}

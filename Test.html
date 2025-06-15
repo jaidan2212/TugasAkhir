@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>TOEFL Online Test</title>
   <link rel="stylesheet" href="Test.css">
 </head>
+
 <body>
-  <div class="container">
+  <div class="container" id="main-test-content">
     <h1>TOEFL Online Test</h1>
     <div id="section-title">Section: Listening</div>
 
@@ -14,17 +16,25 @@
 
     <div id="timer">Time Left: <span id="time">10:00</span></div>
 
-<div id="passage-container"></div> 
-<div id="question-box">
-  <p id="question-text">Loading question...</p>
-  <div class="options" id="options-container"></div>
-</div>
+    <div id="passage-container"></div>
+    <div id="question-box">
+      <p id="question-text">Loading question...</p>
+      <div class="options" id="options-container"></div>
+    </div>
 
     <div class="navigation">
       <button id="prev-btn">Previous</button>
       <button id="next-btn">Next</button>
     </div>
   </div>
+    <div id="result-page" style="display: none; text-align: center; padding: 40px;">
+      <h2>Selamat, Anda Telah Menyelesaikan Tes TOEFL!</h2>
+      <p id="score-display" style="font-size: 1.2em; margin: 20px 0;"></p>
+      <a href="Dashboard.html">
+        <button style="padding: 10px 20px; font-size: 1em;">Kembali ke Dashboard</button>
+      </a>
+    </div>
+
 
   <script src="Test.js"></script>
 </body>
