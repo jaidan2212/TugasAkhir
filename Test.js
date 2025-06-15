@@ -2,6 +2,23 @@ const questions = [
   {
     section: "Listening",
     time: 3600,
+     audioGroup: [
+      {
+        audioSrc: "audio/listening1.mp3", 
+        startIndex: 0,
+        endIndex: 9
+      },
+      {
+        audioSrc: "audio/listening2.mp3", 
+        startIndex: 10,
+        endIndex: 19
+      },
+      {
+        audioSrc: "audio/listening3.mp3", 
+        startIndex: 20,
+        endIndex: 29
+      }
+    ],
     questions: [
       { text: "questions 1", options: ["He knew that cherries were pricier than.", "He bought cherries and grapes because of not knowing their prices.", "He didn't know that cherries were pricier than grapes.", "He didn't buy either grapes or cherries because both were pricy."] },
       { text: "questions 2", options: ["She felt it wasn't fair.", "She was in rage.", "She felt inferior.", "She wasn't furious."] },
