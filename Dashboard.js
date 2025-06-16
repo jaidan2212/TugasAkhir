@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nameDisplay.innerHTML = `<strong>Nama:</strong> ${newName}`;
     emailDisplay.innerHTML = `<strong>Email:</strong> ${newEmail}`;
-    // ✅ SIMPAN KE LOCALSTORAGE
-    localStorage.setItem("userId", randomId);
-    localStorage.setItem("userDate", formattedDate);
     if (newPassword.trim() !== "") {
       const randomId = "TOEFL" + Math.floor(100000 + Math.random() * 900000);
       const today = new Date();
@@ -32,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       idDisplay.innerHTML = `<strong>ID Peserta:</strong> ${randomId}`;
       dateDisplay.innerHTML = `<strong>Tanggal Daftar:</strong> ${formattedDate}`;
-
+    // ✅ SIMPAN KE LOCALSTORAGE
+    localStorage.setItem("userId", randomId);
+    localStorage.setItem("userDate", formattedDate);
 }
 
 
