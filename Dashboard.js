@@ -9,35 +9,39 @@ document.addEventListener('DOMContentLoaded', function () {
   const idDisplay = document.querySelector('.profile-box p:nth-child(4)');
   const dateDisplay = document.querySelector('.profile-box p:nth-child(5)');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const newName = nameInput.value;
-    const newEmail = emailInput.value;
-    const newPassword = passwordInput.value;
+  const newName = nameInput.value;
+  const newEmail = emailInput.value;
+  const newPassword = passwordInput.value;
 
-    nameDisplay.innerHTML = `<strong>Nama:</strong> ${newName}`;
-    emailDisplay.innerHTML = `<strong>Email:</strong> ${newEmail}`;
-    if (newPassword.trim() !== "") {
-      const randomId = "TOEFL" + Math.floor(100000 + Math.random() * 900000);
-      const today = new Date();
-      const formattedDate = today.toLocaleDateString('id-ID', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric'
-      });
+  nameDisplay.innerHTML = `<strong>Nama:</strong> ${newName}`;
+  emailDisplay.innerHTML = `<strong>Email:</strong> ${newEmail}`;
+  
+  localStorage.setItem("userName", newName); // ✅ WAJIB
+  localStorage.setItem("userEmail", newEmail); // ✅ opsional
 
-      idDisplay.innerHTML = `<strong>ID Peserta:</strong> ${randomId}`;
-      dateDisplay.innerHTML = `<strong>Tanggal Daftar:</strong> ${formattedDate}`;
-    // ✅ SIMPAN KE LOCALSTORAGE
+  if (newPassword.trim() !== "") {
+    const randomId = "TOEFL" + Math.floor(100000 + Math.random() * 900000);
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    idDisplay.innerHTML = `<strong>ID Peserta:</strong> ${randomId}`;
+    dateDisplay.innerHTML = `<strong>Tanggal Daftar:</strong> ${formattedDate}`;
+
     localStorage.setItem("userId", randomId);
     localStorage.setItem("userDate", formattedDate);
-}
+  }
 
-
-    passwordInput.value = "";
-  });
+  passwordInput.value = "";
 });
+
+  });
 
 function addResultToTable(dateStr, scores) {
   const tbody = document.getElementById("test-history-body");
