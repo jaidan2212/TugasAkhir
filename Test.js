@@ -840,7 +840,12 @@ function calculateScore() {
   });
 document.getElementById("download-certificate").addEventListener("click", () => {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+  const doc = new jsPDF({
+    orientation: "landscape",
+    unit: "mm",
+    format: "a4"
+  });
+
 
   // Ambil dari localStorage
   const nama = localStorage.getItem("userName");
