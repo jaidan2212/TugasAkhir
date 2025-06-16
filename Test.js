@@ -719,7 +719,18 @@ const answerKey = {
     "Plants that produce a usable substance.",
     "It is good for the environment.",
     "It biodegrades slowly.",
-    "Botany."
+    "Botany.",
+    "Because they can be used to make plastic.",
+    "It decomposes naturally.",
+    "It breaks down faster than traditional plastic.",
+    "It accumulates in the oceans.",
+    "They require industrial composting facilities.",
+    "Food packaging and utensils.",
+    "They are not fully biodegradable yet.",
+    "They degrade faster and more completely.",
+    "Consumers are hesitant due to cost.",
+    "It is a cheap and renewable source.",
+    "Bioplastics will be used for car parts."
   ],
   Structure: [
     "was",
