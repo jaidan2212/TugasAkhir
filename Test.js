@@ -799,9 +799,8 @@ const answerKey = {
 };
 
 function calculateScore() {
-  let totalScore = 0;
-  let totalQuestions = 0;
   let sectionScores = {};
+  let totalQuestions = 0;
 
   questions.forEach((section, sIndex) => {
     let correct = 0;
@@ -820,9 +819,19 @@ function calculateScore() {
       total: section.questions.length,
     };
 
-    totalScore += correct;
     totalQuestions += section.questions.length;
   });
+
+  // Gunakan penyesuaian jumlah soal
+  const listeningRaw = sectionScores.Listening.correct;
+  const structureRaw = sectionScores.Structure.correct;
+  const readingRaw = sectionScores.Reading.correct;
+
+  const listeningScore = Math.round((listeningRaw / 40) * 37 + 31);
+  const structureScore = Math.round((structureRaw / 30) * 37 + 31);
+  const readingScore = Math.round((readingRaw / 30) * 37 + 31);
+
+  const totalScore = Math.round(((listeningScore + structureScore + readingScore) / 3) * 10);
 
   const today = new Date();
   const formattedDate = today.toLocaleDateString('id-ID', {
@@ -831,21 +840,23 @@ function calculateScore() {
     year: 'numeric'
   });
 
-  sectionScores.totalScore = totalScore;
-
   const testResult = {
     date: formattedDate,
-    listening: sectionScores.Listening.correct,
-    structure: sectionScores.Structure.correct,
-    reading: sectionScores.Reading.correct,
+    listening: listeningScore,
+    structure: structureScore,
+    reading: readingScore,
     total: totalScore
   };
+
   saveTestResult(testResult);
 
   document.querySelector("#main-test-content").style.display = "none";
   document.querySelector("#result-page").style.display = "block";
-  document.getElementById("score-display").textContent = `Skor Anda: ${totalScore} dari ${totalQuestions}`;
+
+  document.getElementById("score-display").textContent =
+    `Skor TOEFL Anda: ${totalScore} (Listening: ${listeningScore}, Structure: ${structureScore}, Reading: ${readingScore})`;
 }
+
 function saveTestResult(result) {
   let history = JSON.parse(localStorage.getItem("testHistory")) || [];
   history.push(result);
