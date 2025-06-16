@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TOEFL Reading Test</title>
-  <link rel="stylesheet" href="cosol.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TOEFL Online Test</title>
+  <link rel="stylesheet" href="cosol.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Reading Test - Question 1</h2>
+  <h1>TOEFL Exercise Test</h1>
 
-    <!-- AUDIO -->
-    <audio id="audio-question" controls>
-      <source src="soal1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+  <div id="test-container">
+    <h2 id="section-title"></h2>
+    <div id="passage-text" style="margin-bottom: 10px; font-style: italic; color: #444;"></div>
+    <div id="question-text"></div>
+    <div id="audio-container" style="margin: 10px 0;"></div>
+    <div id="options"></div>
+  </div>
 
-    <!-- QUESTION -->
-    <p>What is the main idea of the passage you just heard?</p>
-    <ul>
-      <li><input type="radio" name="q1" value="a"> A. The evolution of language</li>
-      <li><input type="radio" name="q1" value="b"> B. The history of English grammar</li>
-      <li><input type="radio" name="q1" value="c"> C. The development of writing systems</li>
-      <li><input type="radio" name="q1" value="d"> D. The influence of Latin</li>
-    </ul>
-
-    <button onclick="submitAnswer()">Submit</button>
-    <p id="result"></p>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="beranda.html">
+      <button style="
+        padding: 10px 20px;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      ">
+        ⬅️ Kembali ke Beranda
+      </button>
+    </a>
   </div>
 
   <script src="cosol.js"></script>
