@@ -58,26 +58,55 @@ button {
   background-color: #4cae4c;
 }
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
 #result-page {
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('Latar_hasil.jpg') no-repeat center center;
+  background-size: cover;
   display: none;
-  text-align: center;
-  padding-top: 140px;
-  padding-left: 370px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
 }
 
 .card {
-  background-color: #ffffffcc;
+  background: transparent;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgb(104, 72, 143);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  color: whitesmoke;
   text-align: center;
   max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#score-display {
-  color: #8E2DE2;
+.score-display {
+  color: #fbf7fe;
   font-size: 1.5em;
   margin-bottom: 30px;
+}
+#score-display {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  color: whitesmoke;
 }
 
 .back-button {

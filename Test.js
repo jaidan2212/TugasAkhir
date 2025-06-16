@@ -838,6 +838,7 @@ function calculateScore() {
     month: 'long',
     year: 'numeric'
   });
+  
 document.getElementById("download-certificate").addEventListener("click", () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({
@@ -891,10 +892,10 @@ document.getElementById("download-certificate").addEventListener("click", () => 
   saveTestResult(testResult);
 
   document.querySelector("#main-test-content").style.display = "none";
-  document.querySelector("#result-page").style.display = "block";
+  document.querySelector("#result-page").style.display = "flex";
 
   document.getElementById("score-display").textContent =
-    `Skor TOEFL Anda: ${totalScore}`;
+    `${totalScore}`;
 }
 
 function saveTestResult(result) {
