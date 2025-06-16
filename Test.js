@@ -4,20 +4,15 @@ const questions = [
     time: 3600,
      audioGroup: [
       {
-        audioSrc: "audio/listening1.mp3", 
+        audioSrc: "audio test 1.mp3", 
         startIndex: 0,
-        endIndex: 9
+        endIndex: 14
       },
       {
-        audioSrc: "audio/listening2.mp3", 
-        startIndex: 10,
-        endIndex: 19
+        audioSrc: "audio test 2.mp3", 
+        startIndex: 15,
+        endIndex: 30
       },
-      {
-        audioSrc: "audio/listening3.mp3", 
-        startIndex: 20,
-        endIndex: 29
-      }
     ],
     questions: [
       { text: "questions 1", options: ["He knew that cherries were pricier than.", "He bought cherries and grapes because of not knowing their prices.", "He didn't know that cherries were pricier than grapes.", "He didn't buy either grapes or cherries because both were pricy."] },
@@ -69,9 +64,187 @@ const questions = [
       "He’s going to New York on a business trip.",
       "He is going with his sister to New York."
     ]
-  }
-
-
+  },
+ {
+    text: "questions 11",
+    options: [
+      "She went to the concert already.",
+      "She doesn’t like concerts.",
+      "She can’t go because of her schedule.",
+      "She is performing at the concert."
+    ]
+  },
+  {
+    text: "questions 12",
+    options: [
+      "Mark is traveling for research.",
+      "Mark has been busy with academic work.",
+      "Mark has stopped working on his thesis.",
+      "Mark doesn’t like doing his thesis."
+    ]
+  },
+  {
+    text: "questions 13",
+    options: [
+      "She enjoyed the book very much.",
+      "She hasn’t finished reading it.",
+      "She didn’t like the ending.",
+      "She found the book boring."
+    ]
+  },
+  {
+    text: "questions 14",
+    options: [
+      "His roommate is loud and messy.",
+      "His roommate is quiet and tidy.",
+      "His roommate is hard to live with.",
+      "He wants to move out soon."
+    ]
+  },
+  {
+    text: "questions 15",
+    options: [
+      "The professor will definitely change the date.",
+      "The test has already been canceled.",
+      "The professor is strict about rescheduling.",
+      "The professor is unsure about the test."
+    ]
+  },
+    {
+    text: "questions 1",
+    options: [
+      "Artificial plants.",
+      "Plants in plastic containers.",
+      "Plants that resemble plastic.",
+      "Plants that produce a usable substance."
+    ]
+  },
+  {
+    text: "questions 2",
+    options: [
+      "It lasts longer.",
+      "It is more artificial.",
+      "It is easy to make in a laboratory.",
+      "It is good for the environment."
+    ]
+  },
+  {
+    text: "questions 3",
+    options: [
+      "It biodegrades slowly.",
+      "It kills plants.",
+      "People never throw it away.",
+      "It is not very strong."
+    ]
+  },
+  {
+    text: "questions 4",
+    options: [
+      "Engineering.",
+      "Art.",
+      "Botany.",
+      "Geology."
+    ]
+  },
+  {
+    text: "questions 5",
+    options: [
+      "Because they are easy to grow indoors.",
+      "Because they can be used to make plastic.",
+      "Because they need very little water.",
+      "Because they grow in plastic containers."
+    ]
+  },
+  {
+    text: "questions 6",
+    options: [
+      "It is cheaper than oil-based plastic.",
+      "It is stronger than metal.",
+      "It decomposes naturally.",
+      "It smells like plants."
+    ]
+  },
+  {
+    text: "questions 7",
+    options: [
+      "It burns cleanly in factories.",
+      "It is stored in special landfills.",
+      "It breaks down faster than traditional plastic.",
+      "It repels insects and rodents."
+    ]
+  },
+  {
+    text: "questions 8",
+    options: [
+      "It is too expensive to produce.",
+      "It accumulates in the oceans.",
+      "It changes the DNA of animals.",
+      "It stops plants from growing."
+    ]
+  },
+  {
+    text: "questions 9",
+    options: [
+      "They can take over 100 years to break down.",
+      "They require industrial composting facilities.",
+      "They break down instantly in sunlight.",
+      "They only break down in seawater."
+    ]
+  },
+  {
+    text: "questions 10",
+    options: [
+      "Medical tools and implants.",
+      "Food packaging and utensils.",
+      "Automotive and airplane parts.",
+      "Clothing and textiles."
+    ]
+  },
+  {
+    text: "questions 11",
+    options: [
+      "They are not fully biodegradable yet.",
+      "They smell bad when heated.",
+      "They are toxic to small animals.",
+      "They cannot hold liquids."
+    ]
+  },
+  {
+    text: "questions 12",
+    options: [
+      "They are less flexible.",
+      "They degrade faster and more completely.",
+      "They cost more to produce.",
+      "They are less colorful."
+    ]
+  },
+  {
+    text: "questions 13",
+    options: [
+      "Consumers are hesitant due to cost.",
+      "Everyone already prefers them.",
+      "Consumers dislike plant materials.",
+      "They are only used in government buildings."
+    ]
+  },
+  {
+    text: "questions 14",
+    options: [
+      "It grows in all climates.",
+      "It is already heavily subsidized.",
+      "It is a cheap and renewable source.",
+      "It tastes better than sugarcane."
+    ]
+  },
+  {
+    text: "questions 15",
+    options: [
+      "Bioplastics will be used for car parts.",
+      "Plastic bags will disappear completely.",
+      "All clothing will be made of plants.",
+      "Only scientists will use plastic."
+    ]
+  }
     ]
   },
   {
@@ -445,7 +618,6 @@ function renderQuestion() {
       <audio id="audio-question" controls>
         <source src="audio test 1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-      </audio>
     `;
   } else {
     audioContainer.innerHTML = "";
@@ -538,7 +710,16 @@ const answerKey = {
     "Linda has a good appetite.",
     "He hasn't submitted the paper because of an extension.",
     "She forgot her phone at home.",
-    "He’s visiting his sister who now lives there."
+    "He’s visiting his sister who now lives there.",
+    "She can’t go because of her schedule.",
+    "Mark has been busy with academic work.",
+    "She enjoyed the book very much.",
+    "His roommate is quiet and tidy.",
+    "The professor is strict about rescheduling.",
+    "Plants that produce a usable substance.",
+    "It is good for the environment.",
+    "It biodegrades slowly.",
+    "Botany."
   ],
   Structure: [
     "was",
