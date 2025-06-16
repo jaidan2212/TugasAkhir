@@ -850,33 +850,41 @@ function calculateScore() {
     month: 'long',
     year: 'numeric'
   });
-  document.getElementById("download-certificate").addEventListener("click", () => {
+document.getElementById("download-certificate").addEventListener("click", () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  const nama = prompt("Masukkan nama Anda untuk sertifikat:");
-  const tanggal = new Date().toLocaleDateString('id-ID', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric'
-  });
+  // Ambil dari localStorage
+  const nama = localStorage.getItem("userName");
+  const idPeserta = localStorage.getItem("userId");
+  const tanggalTes = localStorage.getItem("userDate");
 
-  // Ambil skor dari tampilan
-  const scoreDisplay = document.getElementById("score-display").textContent;
+  if (!nama || !idPeserta || !tanggalTes) {
+    alert("Data belum lengkap. Pastikan Anda sudah login & isi profil.");
+    return;
+}
 
-  doc.setFontSize(20);
-  doc.text("SERTIFIKAT TOEFL ONLINE", 60, 30);
+  const skorText = document.getElementById("score-display").textContent;
+
+  doc.setFontSize(18);
+  doc.text("SERTIFIKAT TOEFL ONLINE", 60, 25);
 
   doc.setFontSize(12);
-  doc.text(`Diberikan kepada: ${nama}`, 20, 50);
-  doc.text(`Telah menyelesaikan simulasi TOEFL pada tanggal ${tanggal}`, 20, 60);
-  doc.text(scoreDisplay, 20, 75);
-  doc.text("TOEFL Online Test Platform", 20, 100);
-  doc.text("TTD Pengawas:", 20, 115);
-  doc.line(20, 117, 80, 117); // garis ttd
+  doc.text(`Nama: ${nama}`, 20, 50);
+  doc.text(`ID Peserta: ${idPeserta}`, 20, 60);
+  doc.text(`Tanggal Tes: ${tanggalTes}`, 20, 70);
+
+  doc.text("Hasil Tes:", 20, 85);
+  doc.text(skorText, 20, 95);
+
+  doc.text("Platform: TOEFL Online Test", 20, 120);
+  doc.text("TTD Pengawas:", 20, 135);
+  doc.line(20, 137, 80, 137);
 
   doc.save(`Sertifikat_TOEFL_${nama}.pdf`);
 });
+
+
 
 
   const testResult = {
